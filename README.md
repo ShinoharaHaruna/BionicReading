@@ -8,6 +8,10 @@ BionicReading is a Python tool that allows you to generate HTML files presenting
 
 Chinese is supported in this program.
 
+## Screenshot
+
+![bionic-reading-screenshot](https://cloud.icooper.cc/apps/sharingpath/PicSvr/PicMain/bionic-reading-screenshot.png)
+
 ## Basic Usage
 
 To use BionicReading, you can follow these commands:
