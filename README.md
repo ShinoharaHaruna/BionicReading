@@ -2,6 +2,8 @@
 
 Generate HTML files of bionic reading results using Python.
 
+[中文说明](./README_CN.md)
+
 ## Description
 
 BionicReading is a Python tool that allows you to generate HTML files presenting bionic reading results. Bionic reading is a technique that aims to increase reading speed and comprehension by utilizing the natural motion of the eyes. This tool leverages Python and provides a simple command-line interface to generate HTML files with bionic reading results based on the input text or a text file.
