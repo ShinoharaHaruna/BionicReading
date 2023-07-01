@@ -36,7 +36,13 @@ def generate_div(word, mode):
         s = '<div class="text black">'
     else:
         s = '<div class="text gray">'
-    return s + word + "</div>"
+    s = s + word + "</div>"
+    soup = BeautifulSoup(s, "html.parser")
+    div = soup.find("div")
+    if div and div.text.strip() == "":
+        return ""
+    else:
+        return s
 
 
 def generate(seg_list):
@@ -48,18 +54,18 @@ def generate(seg_list):
 
     div_str = "<div id=\"context\" class=\"container\">"
     for word in seg_list:
-        if word in [" ", "\t", ""]:
+        if word in [" ", "\t"]:
             div_str += generate_div(word, "b")
         elif word == "\n":
-            div_str += "<br />"
+            div_str += "<div class=\"line-break\"></div>"
         else:
             mid_index = math.ceil(len(word) / 2)
             div_str += generate_div("".join(word[:mid_index]), "b")
             div_str += generate_div("".join(word[mid_index:]), "g")
     div_str += "</div>"
 
+
     target_div.replace_with(BeautifulSoup(div_str, "html.parser"))
-    # print("div_str: ", div_str)
     neo_content = soup.prettify()
     with open("result.html", "w") as file:
         file.write(neo_content)

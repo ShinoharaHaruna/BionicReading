@@ -34,3 +34,8 @@ body {
     color: rgb(167, 167, 167);
     font-family: Arial, sans-serif;
 }
+
+.line-break {
+    width: 100%;
+    height: 10px;
+}
